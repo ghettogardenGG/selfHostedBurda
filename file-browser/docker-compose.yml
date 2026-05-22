@@ -2,18 +2,15 @@ version: "3.8"
 
 services:
   filebrowser:
-    user: "1000:1001"
     image: filebrowser/filebrowser:latest
     container_name: filebrowser
+
     ports:
       - "8080:80"
+
     volumes:
       - /data/files:/srv
-      - ./filebrowser/database:/database
-      - ./filebrowser/config:/config
-    restart: unless-stopped
+      - /home/madmax/stacks/file-browser/config:/config
+      - /home/madmax/stacks/file-browser/database:/database
 
-volumes:
-  filebrowser_data:
-  filebrowser_database:
-  filebrowser_config:
+    restart: unless-stopped
