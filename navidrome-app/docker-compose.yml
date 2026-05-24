@@ -1,6 +1,6 @@
 services:
   navidrome:
-    image: deluan/navidrome:latest
+    image: deluan/navidrome@sha256:9fa40b3d8dec43ceb2213d1fa551da3dcfef6ac6d19c2e534efb92527c2bafd2
     user: 1000:1000 # should be owner of volumes
     ports:
       - "4533:4533"
@@ -10,7 +10,9 @@ services:
       ND_LOGLEVEL: info
       ND_SCANSCHEDULE: 1h
       ND_DATAFOLDER: /data
-#      - ND_DEVAUTOCREATEADMINPASSWORD=123
+      ND_DEVAUTOCREATEADMINPASSWORD: 123
+      ND_DEFAULTADMINUSERNAME: admin
+      ND_DEFAULTADMINPASSWORD: 123
     volumes:
       - "/home/madmax/stacks/navidrome-app/data:/data"
       - "/data/files/music:/music:ro"

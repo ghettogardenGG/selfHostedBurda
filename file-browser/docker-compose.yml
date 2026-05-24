@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   filebrowser:
-    image: filebrowser/filebrowser:latest
+    image: filebrowser/filebrowser@sha256:0effd18992e8bd895649df97304bf69806e75ab94a5d75fce82d7276bd6067ab
     container_name: filebrowser
 
     ports:
